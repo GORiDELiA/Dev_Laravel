@@ -1,20 +1,20 @@
 version: "3"
 services:
-  php:
-    build: ./php/
+  app:
+    build: ./app/
     volumes:
-      - ./php/src:/var/www/html
-    container_name: php
+      - ./app/src:/var/www/html
+    container_name: app
     tty: true
   nginx:
     build: ./web/
     volumes:
-      - ./php/src:/var/www/html
+      - ./app/src:/var/www/html
     container_name: nginx
     ports:
       - 80:80
     depends_on:
-      - php
+      - app
   mysql:
     build: ./db/
     container_name: mysql
