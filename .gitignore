@@ -2,3 +2,4 @@ php/src/Laravel/.env
 php/src/Laravel/config/database.php
 db/data
 db/init.d
+db/
