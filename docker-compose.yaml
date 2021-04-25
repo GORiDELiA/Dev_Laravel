@@ -23,8 +23,6 @@ services:
       - ./db/data:/var/lib/mysql
     environment: 
       MYSQL_ROOT_PASSWORD: root
-      #MYSQL_USER: Delia
-      #MYSQL_PASSWORD: docker
     ports:
       - 3306:3306
     depends_on:
