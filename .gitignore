@@ -1,5 +1,5 @@
-php/src/Laravel/.env
-php/src/Laravel/config/database.php
+app/src/Laravel/.env
+app/src/Laravel/config/database.php
 db/data
 db/init.d
 db/
