@@ -1,11 +1,21 @@
 version: "3"
 services:
+  node-react:
+    build: ./node/
+    volumes: 
+      - ./node/src:/usr/src/app
+    container_name: node-react
+    ports:
+      - 3000:3000
+    command: "npm run start"
   app:
     build: ./app/
     volumes:
       - ./app/src:/var/www/html
     container_name: app
     tty: true
+    depends_on:
+      - node-react
   nginx:
     build: ./web/
     volumes:
