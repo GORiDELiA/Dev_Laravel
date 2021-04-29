@@ -1,21 +1,19 @@
 version: "3"
 services:
-  node-react:
-    build: ./node/
-    volumes: 
-      - ./node/src:/usr/src/app
-    container_name: node-react
-    ports:
-      - 3000:3000
-    command: "npm run start"
+#  node-react:
+#    build: ./node/
+#    volumes: 
+#      - ./node/src:/usr/src/app
+#    container_name: node-react
+#    ports:
+#      - 3000:3000
+#    command: "npm run start"
   app:
     build: ./app/
     volumes:
       - ./app/src:/var/www/html
     container_name: app
     tty: true
-    depends_on:
-      - node-react
   nginx:
     build: ./web/
     volumes:
@@ -29,8 +27,8 @@ services:
     build: ./db/
     container_name: mysql
     volumes:
-      - ./db/init.d:/docker-entrypoint-initdb.d
-      - ./db/data:/var/lib/mysql
+    # - ./db/init.d:/docker-entrypoint-initdb.d
+     - ./db/database:/var/lib/mysql
     environment: 
       MYSQL_ROOT_PASSWORD: root
     ports:
