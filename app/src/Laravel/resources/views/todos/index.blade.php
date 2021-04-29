@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ja">
   <head>
-    <title>Jum Todoリスト</title>
+    <title>Todoリスト</title>
   <!-- 必要なメタタグ -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,7 +16,7 @@
       {{csrf_field()}}
   <div class="form-group">
     <label >やることを追加してください</label>
-    <input type="text" name="body"class="form-control" placeholder="todo list" style="max-width:1000px;">
+    <input type="text" name="descriptions"class="form-control" placeholder="todo list" style="max-width:1000px;">
   </div>
   <button type="submit" class="btn btn-primary">追加する</button>  </form>
 
@@ -30,7 +30,7 @@
   <tbody>
     @foreach ($todos as $todo)
     <tr>
-      <td>{{$todo->body}}</td>
+      <td>{{$todo->descriptions}}</td>
       <td><form action="{{ action('TodosController@edit', $todo) }}" method="post">
           {{ csrf_field() }}
           {{ method_field('get') }}

@@ -17,6 +17,4 @@ use Illuminate\Support\Facades\Route;
 #    return view('welcome');
 #});
 
-
-Route::get('/','TodosController@index'); 
-Route::resource('todos','TodosController');
+Route::get('/', [TodosController::class, 'index']);
