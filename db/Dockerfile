@@ -1,3 +1,3 @@
 FROM mysql:latest
 
-COPY ./init.d/ /docker-entrypoint-initdb.d
+# COPY ./init.d/ /docker-entrypoint-initdb.d
