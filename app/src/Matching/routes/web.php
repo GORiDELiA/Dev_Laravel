@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-});
+}); */
+
+Route::get('/', [UserController::class, 'top'])->name('top');
+Route::get('/home', [UserController::class, 'home'])->name('home');
+Route::get('/profile', [UserController::class, 'profile'])->name('profile');
+Route::get('/edit', [UserController::class, 'edit'])->name('edit');
+Route::post('/update', [UserController::class, 'update'])->name('update');
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

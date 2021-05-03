@@ -9,6 +9,6 @@ RUN apt-get update \
   npm \
   && docker-php-ext-install pdo_mysql
   RUN npm install n -g \
-  && n 14.16.1 \
+  && n 14.16.1
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
