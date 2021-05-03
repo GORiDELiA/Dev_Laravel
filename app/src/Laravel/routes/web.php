@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +27,7 @@ Route::patch('/update', [TodoController::class, 'update']);
 Route::get('/{id}/completed', [TodoController::class, 'completed']);
 Route::get('/{id}/delete', [TodoController::class, 'delete']);
 Route::post('/logout', [HomeController::class, 'index']);
+
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
