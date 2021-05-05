@@ -19,6 +19,13 @@ Route::get('/', function () {
     return view('welcome');
 }); 
 
+/* Route::group(['middleware' => ['auth']], function() {
+    Route::get('/top', [UserController::class, 'top'])->name('top');
+    Route::get('/home', [UserController::class, 'home'])->name('home');
+    Route::get('/match', [UserController::class, 'match'])->name('match');
+    Route::post('/update', [UserController::class, 'update'])->name('update');
+  }); */
+
 Route::get('/top', [UserController::class, 'top'])->name('top');
 Route::get('/home', [UserController::class, 'home'])->name('home');
 Route::get('/match', [UserController::class, 'match'])->name('match');
