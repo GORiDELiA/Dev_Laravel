@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use Laravel\Jetstream\Http\Controllers\Livewire\UserProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,17 +15,11 @@ use App\Http\Controllers\UserController;
 |
 */
 
-/* Route::get('/', function () {
+Route::get('/', function () {
     return view('welcome');
-}); */
+}); 
 
-Route::get('/', [UserController::class, 'top'])->name('top');
+Route::get('/top', [UserController::class, 'top'])->name('top');
 Route::get('/home', [UserController::class, 'home'])->name('home');
-Route::get('/profile', [UserController::class, 'profile'])->name('profile');
-Route::get('/edit', [UserController::class, 'edit'])->name('edit');
+Route::get('/match', [UserController::class, 'match'])->name('match');
 Route::post('/update', [UserController::class, 'update'])->name('update');
-
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');

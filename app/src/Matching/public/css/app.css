@@ -12232,6 +12232,8 @@ select {
 
 .border-b {
   border-bottom-width: 1px;
+  border-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+  border-image-slice: 1;
 }
 
 .border-l {

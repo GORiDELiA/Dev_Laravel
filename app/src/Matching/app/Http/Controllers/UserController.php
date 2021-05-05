@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function top() {
-        return view('welcome');
+        return view('top');
     }
 
     public function home() {
@@ -20,14 +20,26 @@ class UserController extends Controller
     }
 
     public function profile() {
-        return view('welcome');
+        if (Auth::check()) {
+            return view('user/profile');
+        } else {
+            return view('auth/login');
+        }
     }
 
-    public function edit() {
-        return view('welcome');
+    public function match() {
+        if (Auth::check()) {
+            return view('match');
+        } else {
+            return view('auth/login');
+        }
     }
 
     public function update() {
-        return view('welcome');
+        if (Auth::check()) {
+            return view('welcome');
+        } else {
+            return view('auth/login');
+        }
     }
 }
